@@ -6,8 +6,6 @@ namespace GogoDriverWeb.Models;
 
 public partial class Personne : IdentityUser
 {
-    public string IdPersonne { get; set; } = null!;
-
     public string? Nom { get; set; }
 
     public string? Prenom { get; set; }
@@ -22,7 +20,7 @@ public partial class Personne : IdentityUser
 
     public virtual ICollection<Plainte> Plaintes { get; set; } = new List<Plainte>();
 
-    public virtual ICollection<Reservtion> Reservtions { get; set; } = new List<Reservtion>();
+    public virtual ICollection<Reservation> Reservtions { get; set; } = new List<Reservation>();
 
     public virtual ICollection<So> Sos { get; set; } = new List<So>();
 

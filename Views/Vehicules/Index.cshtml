@@ -1,0 +1,77 @@
+﻿@model IEnumerable<GogoDriverWeb.Models.Vehicule>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomVehicule)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Immatriculation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Couleur)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Assurance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroChassis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Marque)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypeReservationIdNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypevehiculeIdNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomVehicule)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Immatriculation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Couleur)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Assurance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroChassis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marque)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeReservationIdNavigation.TypeReservationId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypevehiculeIdNavigation.TypevehiculeId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.VehiculeId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.VehiculeId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.VehiculeId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

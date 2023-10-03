@@ -1,0 +1,65 @@
+﻿@model IEnumerable<GogoDriverWeb.Models.Paiement>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MomtantPaiement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telephone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DatePaiement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EtatPaiement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Facturation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModePaiementIdNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MomtantPaiement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telephone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatePaiement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EtatPaiement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Facturation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModePaiementIdNavigation.ModePaiementId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PaiementId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PaiementId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PaiementId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

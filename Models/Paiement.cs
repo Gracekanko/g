@@ -5,9 +5,9 @@ namespace GogoDriverWeb.Models;
 
 public partial class Paiement
 {
-    public string IdPaiement { get; set; } = null!;
+    public string PaiementId { get; set; } = null!;
 
-    public string IdModePaiement { get; set; } = null!;
+    public string ModePaiementId { get; set; } = null!;
 
     public string? MomtantPaiement { get; set; }
 
@@ -19,7 +19,7 @@ public partial class Paiement
 
     public string? Facturation { get; set; }
 
-    public virtual ModePaiement IdModePaiementNavigation { get; set; } = null!;
+    public virtual ModePaiement ModePaiementIdNavigation { get; set; } = null!;
 
-    public virtual ICollection<Reservtion> IdReservations { get; set; } = new List<Reservtion>();
+    public virtual ICollection<Reservation> IdReservations { get; set; } = new List<Reservation>();
 }

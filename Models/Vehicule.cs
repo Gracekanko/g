@@ -5,11 +5,11 @@ namespace GogoDriverWeb.Models;
 
 public partial class Vehicule
 {
-    public string IdVehicule { get; set; } = null!;
+    public string VehiculeId { get; set; } = null!;
 
-    public string IdTypevehicule { get; set; } = null!;
+    public string TypevehiculeId { get; set; } = null!;
 
-    public string IdTypeReservation { get; set; } = null!;
+    public string TypeReservationId { get; set; } = null!;
 
     public string? NomVehicule { get; set; }
 
@@ -25,9 +25,9 @@ public partial class Vehicule
 
     public virtual ICollection<Course> Courses { get; set; } = new List<Course>();
 
-    public virtual TypeReservation IdTypeReservationNavigation { get; set; } = null!;
+    public virtual TypeReservation TypeReservationIdNavigation { get; set; } = null!;
 
-    public virtual TypeVehicule IdTypevehiculeNavigation { get; set; } = null!;
+    public virtual TypeVehicule TypevehiculeIdNavigation { get; set; } = null!;
 
     public virtual ICollection<Personne> Ids { get; set; } = new List<Personne>();
 }

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<GogoDriverWeb.Models.TypeReservation>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrixUnitaire)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TauxPeriodique)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrixUnitaire)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TauxPeriodique)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TypeReservationId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.TypeReservationId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.TypeReservationId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

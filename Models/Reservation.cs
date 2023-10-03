@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 namespace GogoDriverWeb.Models;
 
-public partial class Reservtion
+public partial class Reservation
 {
-    public string IdReservation { get; set; } = null!;
+    public string ReservationId { get; set; } = null!;
 
-    public string IdPersonne { get; set; } = null!;
+    public string PersonneId { get; set; } = null!;
 
-    public string IdTypeReservation { get; set; } = null!;
+    public string TypeReservationId { get; set; } = null!;
 
     public DateTime? DateReservation { get; set; }
 
@@ -23,9 +23,9 @@ public partial class Reservtion
 
     public virtual ICollection<Course> Courses { get; set; } = new List<Course>();
 
-    public virtual Personne IdPersonneNavigation { get; set; } = null!;
+    public virtual Personne PersonneIdNavigation { get; set; } = null!;
 
-    public virtual TypeReservation IdTypeReservationNavigation { get; set; } = null!;
+    public virtual TypeReservation TypeReservationIdNavigation { get; set; } = null!;
 
     public virtual ICollection<Paiement> IdPaiements { get; set; } = new List<Paiement>();
 }

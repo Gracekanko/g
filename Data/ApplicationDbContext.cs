@@ -18,7 +18,7 @@ namespace GogoDriverWeb.Data
 
         public virtual DbSet<Plainte> Plaintes { get; set; }
 
-        public virtual DbSet<Reservtion> Reservtions { get; set; }
+        public virtual DbSet<Reservation> Reservtions { get; set; }
 
         public virtual DbSet<So> Sos { get; set; }
 

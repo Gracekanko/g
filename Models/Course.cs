@@ -5,11 +5,9 @@ namespace GogoDriverWeb.Models;
 
 public partial class Course
 {
-    public string IdCourse { get; set; } = null!;
+    public string CourseId { get; set; } = null!;
 
-    public string IdVehicule { get; set; } = null!;
-
-    public string IdReservation { get; set; } = null!;
+    public string VehiculeId { get; set; } = null!;
 
     public DateTime? DateCourse { get; set; }
 
@@ -21,7 +19,7 @@ public partial class Course
 
     public bool? Position { get; set; }
 
-    public virtual Reservtion IdReservationNavigation { get; set; } = null!;
+    public virtual Reservation ReservationIdNavigation { get; set; } = null!;
 
-    public virtual Vehicule IdVehiculeNavigation { get; set; } = null!;
+    public virtual Vehicule VehiculeIdNavigation { get; set; } = null!;
 }

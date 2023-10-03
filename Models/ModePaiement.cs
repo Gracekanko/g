@@ -5,7 +5,7 @@ namespace GogoDriverWeb.Models;
 
 public partial class ModePaiement
 {
-    public string IdModePaiement { get; set; } = null!;
+    public string ModePaiementId { get; set; } = null!;
 
     public string? LibelleMode { get; set; }
 

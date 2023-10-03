@@ -1,0 +1,47 @@
+﻿@model IEnumerable<GogoDriverWeb.Models.Plainte>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LibellePlainte)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DatePlainte)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonneIdNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LibellePlainte)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatePlainte)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonneIdNavigation.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PlainteId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PlainteId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PlainteId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

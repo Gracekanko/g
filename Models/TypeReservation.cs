@@ -5,7 +5,7 @@ namespace GogoDriverWeb.Models;
 
 public partial class TypeReservation
 {
-    public string IdTypeReservation { get; set; } = null!;
+    public string TypeReservationId { get; set; } = null!;
 
     public string? NomType { get; set; }
 
@@ -13,7 +13,7 @@ public partial class TypeReservation
 
     public int? TauxPeriodique { get; set; }
 
-    public virtual ICollection<Reservtion> Reservtions { get; set; } = new List<Reservtion>();
+    public virtual ICollection<Reservation> Reservtions { get; set; } = new List<Reservation>();
 
     public virtual ICollection<Vehicule> Vehicules { get; set; } = new List<Vehicule>();
 }
