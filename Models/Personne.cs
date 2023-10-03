@@ -11,7 +11,7 @@ public partial class Personne : IdentityUser
     public string? Prenom { get; set; }
     public string? Sexe { get; set; }
 
-    public long? Cni { get; set; }
+    public string? Cni { get; set; }
     public string? NumPermi { get; set; }
 
     public string? NumCapacite { get; set; }
