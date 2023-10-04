@@ -17,12 +17,12 @@ using Microsoft.Extensions.Logging;
 
 namespace GogoDriverWeb.Areas.Identity.Pages.Account
 {
-    public class LoginModel : PageModel
+    public class LoginAdminModel : PageModel
     {
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
 
-        public LoginModel(SignInManager<IdentityUser> signInManager, ILogger<LoginModel> logger)
+        public LoginAdminModel(SignInManager<IdentityUser> signInManager, ILogger<LoginModel> logger)
         {
             _signInManager = signInManager;
             _logger = logger;
@@ -116,7 +116,7 @@ namespace GogoDriverWeb.Areas.Identity.Pages.Account
                 {
                     _logger.LogInformation("User logged in.");
                     //return LocalRedirect(returnUrl);
-                    return RedirectToAction("HomeClient", "Home");
+                    return RedirectToAction("HomeChauffeur", "Home");
                 }
                 if (result.RequiresTwoFactor)
                 {

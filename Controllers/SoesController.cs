@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GogoDriverWeb.Data;
 using GogoDriverWeb.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GogoDriverWeb.Controllers
 {
+    [Authorize]
     public class SoesController : Controller
     {
         private readonly ApplicationDbContext _context;

@@ -1,5 +1,7 @@
 using GogoDriverWeb.Data;
+using GogoDriverWeb.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -62,6 +64,21 @@ using (var scope = app.Services.CreateScope())
     {
         await roleManager.CreateAsync(new IdentityRole(role2));
     }
+
+    //var user = Activator.CreateInstance<Personne>();
+    //user.Nom = "adminNom";
+    //user.Prenom = "adminPrenom";
+
+    //await _userStore.SetUserNameAsync(user, "admin@yahoo.com", CancellationToken.None);
+    //await _emailStore.SetEmailAsync(user, "admin@yahoo.com", CancellationToken.None);
+    //var result = await _userManager.CreateAsync(user, "Password123*");
+
+    //var defaultrole = _roleManager.FindByNameAsync("Chauffeur").Result;
+
+    //if (defaultrole != null)
+    //{
+    //    IdentityResult roleresult = await _userManager.AddToRoleAsync(user, defaultrole.Name);
+    //}
 }
 
 app.Run();

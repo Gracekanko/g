@@ -23,6 +23,21 @@ namespace GogoDriverWeb.Controllers
             return View();
         }
 
+        public IActionResult HomeAdmin()
+        {
+            return View();
+        }
+
+        public IActionResult HomeChauffeur()
+        {
+            return View();
+        }
+
+        public IActionResult HomeClient()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
