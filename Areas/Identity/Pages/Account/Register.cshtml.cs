@@ -14,6 +14,7 @@ using GogoDriverWeb.Data;
 using GogoDriverWeb.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.DataProtection.Internal;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -134,6 +135,7 @@ namespace GogoDriverWeb.Areas.Identity.Pages.Account
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
+
                 if (result.Succeeded)
                 {
                     var defaultrole = _roleManager.FindByNameAsync("Passager").Result;
@@ -142,6 +144,7 @@ namespace GogoDriverWeb.Areas.Identity.Pages.Account
                     {
                         IdentityResult roleresult = await _userManager.AddToRoleAsync(user, defaultrole.Name);
                     }
+
 
                     _logger.LogInformation("User created a new account with password.");
 

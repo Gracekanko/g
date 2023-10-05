@@ -48,8 +48,7 @@ using (var scope = app.Services.CreateScope())
 {
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
     var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
-
-    string role = "Passager";
+string role = "Passager";
     if (!(await roleManager.RoleExistsAsync(role)))
     {
         await roleManager.CreateAsync(new IdentityRole(role));
@@ -65,19 +64,19 @@ using (var scope = app.Services.CreateScope())
         await roleManager.CreateAsync(new IdentityRole(role2));
     }
 
-    //var user = Activator.CreateInstance<Personne>();
-    //user.Nom = "adminNom";
-    //user.Prenom = "adminPrenom";
+    //var user = activator.createinstance<personne>();
+    //user.nom = "adminnom";
+    //user.prenom = "adminprenom";
 
-    //await _userStore.SetUserNameAsync(user, "admin@yahoo.com", CancellationToken.None);
-    //await _emailStore.SetEmailAsync(user, "admin@yahoo.com", CancellationToken.None);
-    //var result = await _userManager.CreateAsync(user, "Password123*");
+    //await _userstore.setusernameasync(user, "admin@yahoo.com", cancellationtoken.none);
+    //await _emailstore.setemailasync(user, "admin@yahoo.com", cancellationtoken.none);
+    //var result = await _usermanager.createasync(user, "password123*");
 
-    //var defaultrole = _roleManager.FindByNameAsync("Chauffeur").Result;
+    //var defaultrole = _rolemanager.findbynameasync("admin").result;
 
     //if (defaultrole != null)
     //{
-    //    IdentityResult roleresult = await _userManager.AddToRoleAsync(user, defaultrole.Name);
+    //    identityresult roleresult = await _usermanager.addtoroleasync(user, defaultrole.name);
     //}
 }
 

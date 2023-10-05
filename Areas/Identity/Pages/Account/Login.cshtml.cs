@@ -116,7 +116,19 @@ namespace GogoDriverWeb.Areas.Identity.Pages.Account
                 {
                     _logger.LogInformation("User logged in.");
                     //return LocalRedirect(returnUrl);
-                    return RedirectToAction("HomeClient", "Home");
+                    if (_signInManager.IsSignedIn(User) && User.IsInRole("Chauffeur"))
+                    {
+                        return RedirectToAction("HomePassager", "Home");
+                    }
+                    else if (_signInManager.IsSignedIn(User) && User.IsInRole("Passager"))
+                    {
+                        return RedirectToAction("HomeClient", "Home");
+                    }
+                    else if (_signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                    {
+                        return RedirectToAction("HomeChauffeur", "Home");
+                    }
+                    
                 }
                 if (result.RequiresTwoFactor)
                 {

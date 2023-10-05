@@ -1,41 +1,38 @@
-﻿@model IEnumerable<GogoDriverWeb.Models.So>
+﻿@model IEnumerable<GogoDriverWeb.Models.Personne>
 
 @{
     ViewData["Title"] = "Index";
 }
 <div class="pagetitle">
-    <h1>Les SOS</h1>
+    <h1>Les passagers</h1>
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"> <a asp-action="Index">Index</a></li>
-            <li class="breadcrumb-item">Les SOS</li>
+            <li class="breadcrumb-item">Les passagers</li>
             <li class="breadcrumb-item active">Liste</li>
         </ol>
     </nav>
 </div><!-- End Page Title -->
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <section class="section">
     <div class="row">
         <div class="col-lg-12">
 
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Liste SOS</h5>
+                    <h5 class="card-title">Liste passagers</h5>
 
                     <!-- Default Table -->
                     <table class="table">
                         <thead>
                             <tr>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.Localisation)
+                                    @Html.DisplayNameFor(model => model.Nom)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.Description)
+                                    @Html.DisplayNameFor(model => model.Prenom)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.PersonneIdNavigation)
+                                    @Html.DisplayNameFor(model => model.Email)
                                 </th>
                                 <th></th>
                             </tr>
@@ -45,18 +42,17 @@
                             {
                                 <tr>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.Localisation)
+                                        @Html.DisplayFor(modelItem => item.Nom)
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.Description)
+                                        @Html.DisplayFor(modelItem => item.Prenom)
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.PersonneIdNavigation.Id)
+                                        @Html.DisplayFor(modelItem => item.Email)
                                     </td>
                                     <td>
-                                        <a asp-action="Edit" asp-route-id="@item.SoId"><i class="fa fa-edit" aria-hidden="true"></i></a> |
-                                        <a asp-action="Details" asp-route-id="@item.SoId"><i class="fa fa-list" aria-hidden="true"></i></a> |
-                                        <a asp-action="Delete" asp-route-id="@item.SoId"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                        <a asp-action="Details" asp-route-id="@item.Id"><i class="fa fa-list" aria-hidden="true"></i></a> |
+                                        <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa fa-trash" aria-hidden="true"></a>
                                     </td>
                                 </tr>
                             }
